@@ -1,10 +1,9 @@
 {
-  "projectId": "reha-proj",
-  "appId": "1:302288477135:web:2209693f89b65ec53250ba",
-  "apiKey": "AIzaSyAm-2m_dbiNp4lFry44jQHPVgiNnPrPuuw",
-  "authDomain": "reha-proj.firebaseapp.com",
-  "firestoreDatabaseId": "ai-studio-47507a50-3e82-4be7-83e5-6043e9044242",
-  "storageBucket": "reha-proj.appspot.com",
-  "messagingSenderId": "302288477135",
-  "measurementId": ""
+  "apiKey": "AIzaSyC0NcTTbvV90Ofy6k8zqQHxeLnGCyVUGwM",
+  "authDomain": "reds-focus.firebaseapp.com",
+  "projectId": "reds-focus",
+  "storageBucket": "reds-focus.firebasestorage.app",
+  "messagingSenderId": "263327478987",
+  "appId": "1:263327478987:web:0e0386a7cb38b50ce2174e",
+  "measurementId": "G-KM3ZPNZX0T"
 }

@@ -579,7 +579,10 @@ function AppContent() {
 
   const shareSession = () => {
     if (!user) return;
-    const url = `${window.location.origin}/focus/${user.uid}`;
+    const basePath = import.meta.env.BASE_URL.endsWith("/")
+      ? import.meta.env.BASE_URL
+      : `${import.meta.env.BASE_URL}/`;
+    const url = new URL(`focus/${user.uid}`, `${window.location.origin}${basePath}`).toString();
     navigator.clipboard.writeText(url);
     alert("Shareable URL copied to clipboard!");
   };

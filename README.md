@@ -18,3 +18,9 @@ View your app in AI Studio: https://ai.studio/apps/47507a50-3e82-4be7-83e5-6043e
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Deploy to GitHub Pages
+
+Push to `main` and GitHub Actions will build and deploy the site with the included workflow at [.github/workflows/deploy-pages.yml](/g:/Reds-Focus/.github/workflows/deploy-pages.yml).
+
+In GitHub, open `Settings -> Pages` and set `Source` to `GitHub Actions`.

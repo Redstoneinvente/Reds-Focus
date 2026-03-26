@@ -3,7 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Reds Focus</title>
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const redirectedPath = params.get("p");
+        if (!redirectedPath) return;
+
+        const query = params.get("q");
+        const nextUrl = `${redirectedPath}${query ? `?${query}` : ""}${window.location.hash}`;
+        window.history.replaceState(null, "", nextUrl);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,66 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and productivity stats",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "streak": { "type": "integer" },
+        "lastCompletedDate": { "type": "string", "format": "date" },
+        "totalGoalsCompleted": { "type": "integer" },
+        "isPremium": { "type": "boolean" },
+        "currentTheme": { "type": "string" },
+        "badges": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["uid", "email"]
+    },
+    "Goal": {
+      "title": "Goal",
+      "description": "A daily productivity goal",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "uid": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "reminderInterval": { "type": "integer" },
+        "reward": { "type": "string" },
+        "estimatedDuration": { "type": "integer" },
+        "completed": { "type": "boolean" },
+        "order": { "type": "integer" },
+        "date": { "type": "string", "format": "date" }
+      },
+      "required": ["id", "uid", "title", "date"]
+    },
+    "ActiveSession": {
+      "title": "ActiveSession",
+      "description": "Current focus session for real-time sync",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "goalId": { "type": "string" },
+        "startTime": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["idle", "focusing", "reward"] }
+      },
+      "required": ["uid", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "User",
+      "description": "User profile and stats"
+    },
+    "/users/{uid}/goals/{goalId}": {
+      "schema": "Goal",
+      "description": "User's daily goals"
+    },
+    "/users/{uid}/activeSession/current": {
+      "schema": "ActiveSession",
+      "description": "Real-time session state"
+    }
+  }
+}
